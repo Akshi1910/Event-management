@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Self Development Club Events</title>
+</head>
+<body>
+    <h2>Upcoming Events - Self Development Club</h2>
+    <div>
+        {% for event in events %}
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.description }}</p>
+            <p><strong>Date:</strong> {{ event.event_date }}</p>
+            <p><strong>Location:</strong> {{ event.location }}</p>
+            <p><strong>Contact:</strong> {{ event.contact_person }}</p>
+            <form method="POST" action="{{ url_for('delete_event', event_id=event.id) }}">
+                <button type="submit">Delete Event</button>
+            </form>
+            <hr>
+        {% endfor %}
+    </div>
+</body>
+</html>

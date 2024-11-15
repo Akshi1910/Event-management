@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Add Self Development Event</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    
+      <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    
+      <!-- bootstrap core css -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}" />
+    
+      <!-- fonts style -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+        rel="stylesheet" />
+    
+      <!-- Custom styles for this template -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+      <!-- responsive style -->
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}" />
+    
+</head>
+<body>
+  <section class="form_section layout_padding">
+    <div class="container">
+        <h2>Add Event for Self Development Club</h2>
+        <form method="POST" action="{{ url_for('add_self_dev_event') }}">
+            <label for="title">Title:</label><br>
+            <input type="text" name="title" id="title" required><br>
+
+            <label for="description">Description:</label><br>
+            <textarea name="description" id="description" required></textarea><br>
+
+            <label for="event_date">Date:</label><br>
+            <input type="date" name="event_date" id="event_date" required><br>
+
+            <label for="location">Location:</label><br>
+            <input type="text" name="location" id="location" required><br>
+
+            <label for="contact_person">Contact Person:</label><br>
+            <input type="text" name="contact_person" id="contact_person" required><br>
+
+            <label for="form_link">Google Form Link:</label><br>
+            <input type="url" name="form_link" id="form_link" required><br>
+
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>

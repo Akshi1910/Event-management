@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Event</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="club_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>Register for Event: {{ event.title }}</h2>
+                <hr>
+            </div>
+            <form action="{{ event.form_link }}" target="_blank">
+                <div class="form-group">
+                    <label for="student_name">Name:</label>
+                    <input type="text" id="student_name" name="student_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <a href="{{event.form_link}}">Register Now</a>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

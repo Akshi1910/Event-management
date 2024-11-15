@@ -1,0 +1,54 @@
+]<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Self Development Club Events</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}" />
+  
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+      rel="stylesheet" />
+  
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+    <!-- responsive style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}" />
+  
+</head>
+<body>
+  <section class="club_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>Self Development Club Events</h2>
+        <hr>
+      </div>
+      <p>Join us in our events focused on personal growth and self-improvement.</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        {% for event in events %}
+        <div class="col-md-4">
+          <div class="box">
+            <div class="detail-box">
+              <h4>{{ event.title }}</h4>
+              <p>{{ event.description }}</p>
+              <p><strong>Date:</strong> {{ event.event_date }}</p>
+              <p><strong>Location:</strong> {{ event.location }}</p>
+              <p><strong>Contact:</strong> {{ event.contact_person }}</p>
+              <a href="{{ event.form_link }}" target="_blank">Register Now</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</body>
+</html>
